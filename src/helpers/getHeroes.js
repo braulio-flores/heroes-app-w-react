@@ -17,8 +17,6 @@ export const getHeroesById = ( id ) => {
 
 export const getHeroesByName = ( name ) => {
 
-    console.log('aaa');
-
     name = name.toLowerCase();
 
 
