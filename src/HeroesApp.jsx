@@ -5,7 +5,6 @@ const HeroesApp = () => {
   return (
     <>
         <AppRouters />
-        <h1>Heroes App</h1>
         
     </>
   )

@@ -1,15 +1,20 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
+
+  const navigate = useNavigate();
+
   const handleLogOut = () => {
-    // TODOPOR HACER
-    console.log("lOGoUT");
+    navigate('/login',{
+      replace:true
+    });
   };
+
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
-        Asociaciones
+        Heroes App
       </Link>
 
       <div className="navbar-collapse">
@@ -30,6 +35,14 @@ export const Navbar = () => {
             to="/dc"
           >
             DC
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              "nav-item nav-link " + (isActive && " active")
+            }
+            to="/search"
+          >
+            Search
           </NavLink>
         </div>
       </div>
