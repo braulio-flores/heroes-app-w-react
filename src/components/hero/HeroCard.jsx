@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+const heroImg = require.context('../../assets/', true);
+// EL TRUE ES PARA QUE NO SOLO BUSQUE EN ESA CAROETA SINO ADEMAS EN SUBDIRECTORIOS
 
 const HeroCard = ({
   id,
@@ -14,7 +16,7 @@ const HeroCard = ({
       <div className="card ">
         <div className="row no-gutters">
             <div className="col-4">
-                <img src={`/assets/${id}.jpg`} className='card-img' alt={ superhero } />
+                <img src={ heroImg(`./${id}.jpg`) } className='card-img' alt={ superhero } />
             </div>
             <div className="col-8">
                 <div className="card-body">
