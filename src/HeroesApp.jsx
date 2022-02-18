@@ -9,17 +9,19 @@ const HeroesApp = () => {
 
   const recoverInfo = () =>{
 
-    console.log('ejecute');
-    return {
-      nombre:'Bra',
-      logged:true
-    }
+    return JSON.parse(localStorage.getItem('userInfo')) || {logged:false}
+    // return {
+    //   nombre:'Bra',
+    //   logged:true
+    // }
   }
   
   const [userInfoSession, dispatch] = useReducer(authReducer, {}, recoverInfo);
 
   useEffect(() => {
-    console.log('cambie');
+    // console.log('cambie');
+    localStorage.setItem('userInfo',JSON.stringify(userInfoSession));
+
   }, [userInfoSession])
   
 
